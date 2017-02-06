@@ -26,7 +26,7 @@ console.log(localStorage.foo);
 然而promise代码仍然很生硬，因为promise只是替换了原来的写法，如<code>try</code>，<code>catch</code>和<code>return</code>：
 
 ```javascript
-var db = new PouchDB('mydb);
+var db = new PouchDB('mydb');
 db.porst({}).then(function (result){
 	return db.get(result.id);
 }).then(function (doc){
@@ -93,7 +93,7 @@ async让我们写出来的代码看起来像是同步，但实际上是异步的
 使用promise，你应该会这样写：
 
 ```javascript
-db.get('docid).catch(function (err) {
+db.get('docid').catch(function (err) {
 	if(err.name === 'not_found') {
 		return {};  // new doc
 	}
